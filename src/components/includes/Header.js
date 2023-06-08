@@ -11,8 +11,8 @@ export default function Header() {
                 </HeaderLeft>
                 <HeaderRight>
                     <HeadingNav>
-                        <BellImage src ={require("../assets/Property-1=bell.svg").default} alt ="bellImage"/>
-                        <Imageprofile src ={require("../assets/Frame-3466909.png")} alt ="profileIMage"/>
+                        <BellImage src ={require("../assets/bell.svg").default} alt ="bellImage"/>
+                        <Imageprofile src ={require("../assets/profile.png")} alt ="profileIMage"/>
                         <DetailSection>
                             <ProfileName>Robert Fox</ProfileName>
                             <ProfilePositon>Admin</ProfilePositon>
@@ -33,7 +33,7 @@ display: flex;
 justify-content: space-between;
 height: 80px;
 align-items: center;
-background-color:#171B2C;
+background-color:#111219;
 
 
 
