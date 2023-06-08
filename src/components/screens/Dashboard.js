@@ -124,9 +124,9 @@ export default function Dashboard() {
                                 <Amount>Amount</Amount>
                             </InsideTopLeft>
                             <InsideTopRight>
-                                <TopInsideImage src={require("../assets/bitcoin.svg").default} alt="Coin-image"></TopInsideImage>
-                                <TopInsideImage src={require("../assets/diamond.svg").default} alt="Coin-image"></TopInsideImage>
-                                <TopInsideImage src={require("../assets/coinwater.svg").default} alt="Coin-image"></TopInsideImage>
+                               <CoinSpan> <TopInsideImage src={require("../assets/bitcoin.svg").default} alt="Coin-image"></TopInsideImage></CoinSpan>
+                               <CoinSpan> <TopInsideImage src={require("../assets/diamond.svg").default} alt="Coin-image"></TopInsideImage></CoinSpan>
+                               <CoinSpan> <TopInsideImage src={require("../assets/coinwater.svg").default} alt="Coin-image"></TopInsideImage></CoinSpan>
                             </InsideTopRight>
                         </TopInsideTop>
                         <RightTopMiddle>
@@ -149,7 +149,7 @@ export default function Dashboard() {
                             <TransactionTitle>Recent Transaction</TransactionTitle>
                             <BitCoinContainer>
                                 <BitCoinLeftContainer>
-                                    <BitcoinImage src = {require("../assets/bitcoin.svg").default} alt = "BitcoinImage" />
+                                    <BitcoinSpan><BitcoinImage src = {require("../assets/bitcoin.svg").default} alt = "BitcoinImage" /></BitcoinSpan>
                                     <BitCoinTitleContainer>
                                         <NameCoin>Bitcoin</NameCoin>
                                         <NameCoinType>BTC</NameCoinType>
@@ -162,7 +162,7 @@ export default function Dashboard() {
                             </BitCoinContainer>
                             <BitCoinContainer>
                                 <BitCoinLeftContainer>
-                                    <BitcoinImage src = {require("../assets/coinwater.svg").default} alt = "BitcoinImage" />
+                                    <BitcoinSpan><BitcoinImage src = {require("../assets/coinwater.svg").default} alt = "BitcoinImage" /></BitcoinSpan>
                                     <BitCoinTitleContainer>
                                         <NameCoin>Bitcoin</NameCoin>
                                         <NameCoinType>BTC</NameCoinType>
@@ -175,7 +175,7 @@ export default function Dashboard() {
                             </BitCoinContainer>
                             <BitCoinContainer>
                                 <BitCoinLeftContainer>
-                                    <BitcoinImage src = {require("../assets/diamond.svg").default} alt = "BitcoinImage" />
+                                    <BitcoinSpan><BitcoinImage src = {require("../assets/diamond.svg").default} alt = "BitcoinImage" /></BitcoinSpan>
                                     <BitCoinTitleContainer>
                                         <NameCoin>Bitcoin</NameCoin>
                                         <NameCoinType>BTC</NameCoinType>
@@ -191,7 +191,9 @@ export default function Dashboard() {
                     <RightBottomSection>
                         <RightBottomInsideTop>
                             <LeftExchangeTitle>Exchange</LeftExchangeTitle>
-                            <RightSyncImage src = {require("../assets/sync.svg").default} alt = "syncImage" />
+                                <RightSyncSpan>
+                                    <RightSyncImage src = {require("../assets/sync.svg").default} alt = "syncImage" />
+                                </RightSyncSpan>
                         </RightBottomInsideTop>
                         <RightBottomInsideMiddle>
                             
@@ -199,25 +201,31 @@ export default function Dashboard() {
 		                    <SaleContainer>
                                 <SaleAmount>$678</SaleAmount>
 			                    <SaleAmountRightContaner>
-                                    <Currency>USD</Currency>
-				                    <CurrencyDropdown></CurrencyDropdown>
+                                    <CurrencyDropdown>
+                                        <Currency>USD</Currency>
+                                        <Currency>ETH</Currency>
+
+				                    </CurrencyDropdown>
 
                                 </SaleAmountRightContaner>
                             </SaleContainer>
-                            <SaleName>Sale</SaleName>
+                            <SaleName>buy</SaleName>
 		                    <SaleContainer>
-                                <SaleAmount>.990</SaleAmount>
+                                <SaleAmount>0.990</SaleAmount>
 			                    <SaleAmountRightContaner>
-                                    <Currency>ETH</Currency>
-				                    <CurrencyDropdown></CurrencyDropdown>
+				                    <CurrencyDropdown>
+                                        <Currency>ETH</Currency>
+                                        <Currency>USD</Currency>
+                                    </CurrencyDropdown>
 
                                 </SaleAmountRightContaner>
                             </SaleContainer>
 
                         </RightBottomInsideMiddle>
+                        <RightBottomSubmitButton>Exchange Now</RightBottomSubmitButton>
+
 
                     </RightBottomSection>
-                    <RightBottomSubmitButton>Exchange Now</RightBottomSubmitButton>
 
 
  
@@ -320,10 +328,7 @@ width: 40px;
 height: 40px;
 display: block;
 `
-const DashboardRight = styled.div`
-width:25%;
 
-`
 const Percentage = styled.span`
 color: #07af5a;
 display: block;
@@ -396,49 +401,258 @@ width:40%;
 height: 100px;
 background:#171B2C;
 `
+const DashboardRight = styled.div`
+width:25%;
+
+`
 const RightTopContainer = styled.div`
 background-color: #171B2C ;
+padding: 20px;
+border-radius: 8px;
 `
-const TopInsideTop = styled.div``
-const InsideTopLeft = styled.div``
-const Amount = styled.h4``
-const InsideTopRight = styled.div``
-const TopInsideImage = styled.img``
+
+const TopInsideTop = styled.div`
+display: flex;
+justify-content: space-between;
+margin-bottom: 15px;
+
+`
+const InsideTopLeft = styled.div`
+align-items: center;
+`
+const Amount = styled.h4`
+color: #BDC5D9;
+`
+const InsideTopRight = styled.div`
+display: flex;
+align-items: center;
+
+`
+const CoinSpan = styled.span`
+border-radius: 50%;
+background-color: #111219;
+width:25px ;
+height: 25px;
+display: flex;
+justify-content:center;
+align-items: center;
+margin-right: 10px;
+
+`
+const TopInsideImage = styled.img`
+display: block;
+width: 15px;
+height: 15px;
+
+`
 const RightTopMiddle = styled.div``
 const MiddleTopInside = styled.div``
-const TotalAmount = styled.h3``
-const MiddleBottomInside = styled.div``
-const DepositContainer = styled.div``
-const DepositImage = styled.img``
-const Deposit = styled.h4``
-const WithdrawelContainer = styled.div``
-const WithdrawImage = styled.img``
-const Withdraw = styled.h4``
+const TotalAmount = styled.h3`
+color: #EE633C;
+font-weight: 600;
+margin-bottom: 10px;
+`
+const MiddleBottomInside = styled.div`
+display: flex;
+margin-bottom: 10px;
+`
+const DepositContainer = styled.div`
+background-color: #1d2033;
+border-radius: 8px;
+display: flex;
+margin-right: 10px;
+align-items: center;
+padding: 5px;
+
+`
+const DepositImage = styled.img`
+display: block;
+width: 15px;
+height: 15px;
+margin-right: 5px;
+`
+const Deposit = styled.h5`
+width: 48%;
+font-size: 10px;
+color: #7B7F94;
+word-wrap:break-word;
+
+
+`
+const WithdrawelContainer = styled.div`
+background-color: #1d2033;
+border-radius: 8px;
+display: flex;
+margin-right: 20px;
+align-items: center;
+padding: 5px;
+
+`
+const WithdrawImage = styled.img`
+display: block;
+width: 15px;
+height: 15px;
+margin-right: 5px;
+`
+const Withdraw = styled.h5`
+width: 44%;
+font-size: 10px;
+color: #7B7F94;
+word-wrap:break-word;
+/* white-space: pre-line; */
+`
 const RightTopBottom = styled.div``
-const TransactionTitle = styled.h5``
-const BitCoinContainer = styled.div``
-const BitCoinLeftContainer = styled.div``
-const BitcoinImage = styled.img``
-const BitCoinTitleContainer = styled.div``
-const NameCoin = styled.h4``
-const NameCoinType = styled.h4``
+const TransactionTitle = styled.h5`
+color: #BDC5D9;
+font-weight: 600;
+margin-bottom: 10px;
+`
+const BitCoinContainer = styled.div`
+display: flex;
+justify-content: space-between;
+padding: 10px;
+border:.3px solid ;
+
+border-left : none;
+box-shadow: radial-gradient(red, green, blue) 1px 1px 1px 0px ;
+margin-bottom: 10px;
+border-radius: 8px;
+
+`
+const BitCoinLeftContainer = styled.div`
+display: flex;
+align-items: center;
+
+`
+const BitcoinSpan = styled.span`
+border-radius: 8px;
+background-color: #111219;
+width:25px ;
+height: 25px;
+display: flex;
+justify-content:center;
+align-items: center;
+
+`
+
+const BitcoinImage = styled.img`
+width: 15px;
+height: 15px;
+display: block;
+
+`
+const BitCoinTitleContainer = styled.div`
+margin-left: 10px;
+`
+const NameCoin = styled.h4`
+font-size: 14px;
+font-weight: 600;
+color: #BDC5D9;
+margin-bottom: 5px;
+
+`
+const NameCoinType = styled.h6`
+font-size: 10px;
+font-weight: 600;
+text-align: center;
+color: #BDC5D9;
+
+`
 const BitCoinRightContainer = styled.div``
-const BitcoinAmount = styled.h4``
-const BitcoinTime = styled.h4``
+const BitcoinAmount = styled.h4`
+font-size: 14px;
+font-weight: 600;
+color: #BDC5D9;
+margin-bottom: 5px;
+`
+const BitcoinTime = styled.h6`
+font-size: 10px;
+font-weight: 600;
+text-align: center;
+color: #BDC5D9;
+`
 const RightBottomSection = styled.div`
 background-color: #171B2C ;
+margin-top: 50px;
+padding: 20px;
+border-radius: 8px;
 `
-const RightBottomInsideTop = styled.div``
-const LeftExchangeTitle = styled.h3``
-const RightSyncImage = styled.img``
-const RightBottomInsideMiddle = styled.div``
-const SaleName = styled.h3``
-const SaleContainer = styled.div``
-const SaleAmount = styled.h4``
+const RightBottomInsideTop = styled.div`
+display: flex;
+justify-content: space-between;
+align-items: center;
+
+`
+const LeftExchangeTitle = styled.h3`
+color: #BDC5D9;
+font-size: 14px;
+font-weight: 400;
+`
+const RightSyncSpan = styled.span`
+justify-content: center;
+align-items: center;
+display: flex;
+background-color: rgb(29, 32, 51);
+border-radius: 50%;
+width: 25px;
+height: 25px;
+`
+const RightSyncImage = styled.img`
+display: block;
+width: 10px;
+height: 10px;
+`
+const RightBottomInsideMiddle = styled.div`
+margin-top: 20px;
+`
+const SaleName = styled.h3`
+color: #76829B;
+font-size: 12px;
+margin-bottom: 10px;
+
+`
+const SaleContainer = styled.div`
+display: flex;
+justify-content: space-between;
+align-items: center;
+border: .5px solid #171B2C;
+box-shadow: rgb(118, 130, 155,.5) 1px 0.5px 0.5px 0.5px;
+padding: 10px;
+border-radius: 8px;
+border-bottom-left-radius:0;
+border-top-left-radius:0;
+margin-bottom: 20px;
+`
+const SaleAmount = styled.h4`
+color: #BDC5D9;
+font-size: 15px;
+font-weight:600;
+
+`
+
+const CurrencyDropdown = styled.select`
+color: #BDC5D9;
+
+`
+const Currency = styled.option`
+color: #BDC5D9;
+background-color: #171B2C ;
+border-radius: 8px;
+
+
+`
 const SaleAmountRightContaner = styled.div``
-const Currency = styled.h4``
-const CurrencyDropdown = styled.select``
-const RightBottomSubmitButton = styled.button``
+
+const RightBottomSubmitButton = styled.button`
+display: block;
+width:100%;
+color: #fff;
+background-color: #20C866;
+padding: 5px 0;
+border-radius: 8px;
+font-size: 12px;
+
+`
 
 
 
