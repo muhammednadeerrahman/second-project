@@ -23,11 +23,9 @@ export default function Nav() {
 }
 
 const SideBar = styled.div`
- position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color:blue;
-    width: 20%;
-    height: 100vh;
+
+width: 18%;
+background-color:#192a56;
+height:vh;
+
 `

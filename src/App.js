@@ -9,15 +9,16 @@ import Transaction from './components/screens/Transaction';
 import Wallet from './components/screens/Wallet';
 import Nav from './components/includes/Nav';
 import Header from './components/includes/Header';
+import styled from "styled-components"
+
 
 
 function App() {
   return (
     <>
-      <div className='main'>
+      <MainContainer>
         <Router>
-        {/* <Nav/> */}
-        <Header/>
+        <Nav/>
             <Routes >
               <Route path='/' element={<Dashboard/>}></Route>
               <Route path='Security' element={<Security/>}></Route>
@@ -27,12 +28,17 @@ function App() {
               <Route path='Wallet' element={<Wallet/>}></Route>
             </Routes>
         </Router>
-      </div>
+      </MainContainer>
  
     </>
   );
 }
 
 export default App;
+
+const MainContainer = styled.div`
+display: flex;
+
+`
 
 

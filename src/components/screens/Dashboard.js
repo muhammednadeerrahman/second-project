@@ -6,7 +6,9 @@ import Header from '../includes/Header'
 export default function Dashboard() {
   return (
     <>
+        
         <SectionDashboard>
+        <Header/>
             <SectionWrapper>
                 <DashboardLeft>
                     <LeftTop>
@@ -59,9 +61,8 @@ export default function Dashboard() {
                                     </SpanContainer>
     
                                     <Percentage>-10%</Percentage>
-                                </UpImageContainer>
-                            
-                            </TopInnerTop>
+                                </UpImageContainer>  
+                            </TopInnerTop>  
                             <TopInnerBottom>
                                 <SymbolSpan>
                                     <BottomImage src = {require("../assets/bitcoin.svg").default} alt = "image"/>
@@ -70,18 +71,51 @@ export default function Dashboard() {
 
                             </TopInnerBottom>
                         </TopThreeContainer>
-                 
-                        
-                    </LeftTop>
+                    </LeftTop>      {/* left top section */}
+           
                     <DashboardMiddleSection>
+                        <LeftMiddleInsideTop>
+                            <MarketContainer>
+                                <MarketTitle>Trading Market</MarketTitle>
+                            </MarketContainer>
+                            <TimeContainer>
+                                <TimeData>1m</TimeData>
+                                <TimeData>30m</TimeData>
+                                <TimeDataSelect>
+                                    <TimeDataOption>1 h</TimeDataOption>
+                                    <TimeDataOption>1 day</TimeDataOption>
+                                    <TimeDataOption>1 week</TimeDataOption>
+                                    <TimeDataOption>1 mon</TimeDataOption>
+                                </TimeDataSelect>
+                                <TimeIMages src = {require("../assets/timedata1.svg").default} alt="timeImage" />
+                                <TimeIMages src = {require("../assets/graph.svg").default} alt="timeImage" />
+                                <TimeIMages src = {require("../assets/timedata3.svg").default} alt="timeImage" />
+                                <TimeIMages src = {require("../assets/timedata4.svg").default} alt="timeImage" />
 
-                    </DashboardMiddleSection>
+
+                            </TimeContainer>
+
+                        </LeftMiddleInsideTop>
+                        <LeftMiddleInsideBottom>
+                            <LeftToolContainer>
+			                    <ToolIMage src={require("../assets/tool1.svg").default}/>
+			                    <ToolIMage src={require("../assets/tool2.svg").default}/>
+			                    <ToolIMage src={require("../assets/tool3.svg").default}/>
+			                    <ToolIMage src={require("../assets/tool4.svg").default}/>
+			                    <ToolIMage src={require("../assets/tool5.svg").default}/>
+			                    <ToolIMage src={require("../assets/tool6.svg").default}/>
+			                    <ToolIMage src={require("../assets/tool7.svg").default}/>
+                            </LeftToolContainer>
+                            <RightGraphContainer></RightGraphContainer>
+                        </LeftMiddleInsideBottom>
+                    </DashboardMiddleSection> {/* left middle section */}
+                    
                     <LeftBottomContainer>
                         <LeftBottomTwoContainers></LeftBottomTwoContainers>
                         <LeftBottomTwoContainers></LeftBottomTwoContainers>
 
-                    </LeftBottomContainer>
-                </DashboardLeft>
+                    </LeftBottomContainer>  {/* left bottom section */}
+                </DashboardLeft>   {/* dashboard left section */}
                
                 <DashboardRight>
                     <RightTopContainer>
@@ -200,6 +234,8 @@ export default function Dashboard() {
 
 const SectionDashboard = styled.div`
 background-color:  #111219;
+width:100%
+
 `
 const SectionWrapper = styled.div`
 display: flex;
@@ -285,7 +321,7 @@ height: 40px;
 display: block;
 `
 const DashboardRight = styled.div`
-width:35%;
+width:25%;
 
 `
 const Percentage = styled.span`
@@ -302,7 +338,55 @@ const DashboardMiddleSection = styled.div`
 width:100%;
 height: 300px;
 background-color:#171B2C;
+margin-bottom: 50px;
+padding: 20px;
 `
+const LeftMiddleInsideTop = styled.div`
+display: flex;
+justify-content: space-between;
+margin-bottom: 20px;
+`
+const MarketContainer = styled.div``
+const MarketTitle = styled.h3`
+color: #fff;
+`
+const TimeContainer = styled.div`
+display: flex;
+justify-content: space-between;
+`
+const TimeData = styled.h4`
+color: #fff;
+margin-right: 10px;
+`
+const TimeDataSelect = styled.select`
+color: #fff;
+width: 55px;
+margin-right: 10px;
+
+`
+const TimeDataOption = styled.option`
+color: #000;
+`
+const TimeIMages = styled.img`
+display: block;
+width: 20px;
+height: 20px;
+margin-right: 10px;
+
+`
+const LeftMiddleInsideBottom = styled.div``
+const LeftToolContainer = styled.div`
+display: flex;
+flex-direction: column;
+width: 30px;
+`
+const ToolIMage = styled.img`
+display: block;
+width: 20px;
+margin-bottom: 10px;
+`
+const RightGraphContainer = styled.div``
+
 const LeftBottomContainer = styled.div`
 display: flex;
 justify-content: space-between;

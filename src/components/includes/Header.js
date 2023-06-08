@@ -32,6 +32,7 @@ padding: 30px;
 display: flex;
 justify-content: space-between;
 height: 80px;
+width: 100%;
 align-items: center;
 background-color:#111219;
 
