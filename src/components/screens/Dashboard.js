@@ -1,73 +1,78 @@
 import React from 'react'
 import styled from "styled-components"
+import Header from '../includes/Header'
 
 
 export default function Dashboard() {
   return (
     <>
-        <SectionHeader>
-                <HeaderLeft>
-                    <Heading>Dashboard</Heading>
-                    <SubHeading>Whole data stock here!</SubHeading>
-                </HeaderLeft>
-                <HeaderRight>
-                    <HeadingNav>
-                        <BellImage src ={require("../assets/Property-1=bell.svg").default} alt ="bellImage"/>
-                        <Imageprofile src ={require("../assets/Frame-3466909.png")} alt ="profileIMage"/>
-                        <DetailSection>
-                            <ProfileName>Robert Fox</ProfileName>
-                            <ProfilePositon>Admin</ProfilePositon>
-                        </DetailSection>
-                    </HeadingNav>
+        <SectionDashboard>
+            <DashboardLeft>
+                <LeftTop>
+                    <TopThreeContainer>
+                       <TopInnerTop>
+                          <TopCount>852,00</TopCount>
+                          <TopImage src = {require("../assets/Property-1=down.svg").default} alt = "image"></TopImage>
+                          <Percentage>-10%</Percentage>
+                       </TopInnerTop>
+                       <TopInnerBottom>
+                          <BottomImage src = {require("../assets/Property-1=down.svg").default} alt = "image"></BottomImage>
+                          <BottomImage src = {require("../assets/Property-1=down.svg").default} alt = "image"></BottomImage>
 
-                </HeaderRight>
-            
-        </SectionHeader>
-    </>
-  )
+                       </TopInnerBottom>
+                    </TopThreeContainer>
+                    <TopThreeContainer>
+                       <TopInnerTop>
+                          <TopCount>852,00</TopCount>
+                          <TopImage src = {require("../assets/Property-1=down.svg").default} alt = "image"></TopImage>
+                          <Percentage>-10%</Percentage>
+                       </TopInnerTop>
+                       <TopInnerBottom>
+                          <BottomImage src = {require("../assets/Property-1=down.svg").default} alt = "image"></BottomImage>
+                          <BottomImage src = {require("../assets/Property-1=down.svg").default} alt = "image"></BottomImage>
+
+                       </TopInnerBottom>
+                    </TopThreeContainer>
+                    <TopThreeContainer>
+                       <TopInnerTop>
+                          <TopCount>852,00</TopCount>
+                          <TopImage src = {require("../assets/Property-1=down.svg").default} alt = "image"></TopImage>
+                          <Percentage>-10%</Percentage>
+                       </TopInnerTop>
+                       <TopInnerBottom>
+                          <BottomImage src = {require("../assets/Property-1=down.svg").default} alt = "image"></BottomImage>
+                          <BottomImage src = {require("../assets/Property-1=down.svg").default} alt = "image"></BottomImage>
+
+                       </TopInnerBottom>
+                    </TopThreeContainer>
+                    
+                </LeftTop>
+            </DashboardLeft>
+            <DashboardRight></DashboardRight>
+        </SectionDashboard>
+  
+    </> )
 }
-const SectionHeader = styled.div`
-padding: 30px;
-display: flex;
-justify-content: space-between;
-height: 80px;
-align-items: center;
 
-
+const SectionDashboard = styled.div`
+background-color: #171B2C;
 `
-const HeaderLeft = styled.div``
-
-
-const Heading = styled.h1``
-const SubHeading = styled.h5`
-margin-top:-10px;
-`
-const HeaderRight = styled.div``
-const HeadingNav = styled.div`
+const DashboardLeft = styled.div``
+const LeftTop = styled.div`
 display: flex;
 justify-content: space-between;
 `
-const BellImage = styled.img`
-display: block;
-width: 40px;
-height: 40px;
-border-radius: 50%;
-background-color: green;
-margin-right: 20px;
+const TopThreeContainer = styled.div`
+width: 30%;
+background-color: #111219 ;
+`
+const TopInnerTop = styled.div``
+const TopCount = styled.h4``
+const TopImage = styled.img``
+const TopInnerBottom = styled.div``
+const BottomImage = styled.img``
+const DashboardRight = styled.div``
+const Percentage = styled.span``
+// const SectionDashboard = styled.div``
 
-`
-const Imageprofile = styled.img`
-display: block;
-width: 40px;
-height: 40px;
-border-radius: 50%;
-margin-right: 20px;
-
-`
-const DetailSection = styled.div`
-display: flex;
-flex-direction: column;
-`
-const ProfileName = styled.span``
-const ProfilePositon = styled.span``
 
