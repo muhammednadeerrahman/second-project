@@ -106,14 +106,167 @@ export default function Dashboard() {
 			                    <ToolIMage src={require("../assets/tool6.svg").default}/>
 			                    <ToolIMage src={require("../assets/tool7.svg").default}/>
                             </LeftToolContainer>
-                            <RightGraphContainer></RightGraphContainer>
+                            <RightGraphContainer>
+                                    <GraphTitleContainer>
+                                        <GraphTitleLeftContainer>
+                                            <GraphType>DEFT/ETH</GraphType>
+                                            <GraphTime>1h</GraphTime>
+                                            <GraphSwap>Uniswap</GraphSwap>
+                                        </GraphTitleLeftContainer>  
+                                        <GraphTitleRightContainer>
+                                            <DataTitle>O<GraphDataGreen>0.0682</GraphDataGreen></DataTitle>
+                                            <DataTitle>H<GraphData>0.0682</GraphData></DataTitle>
+                                            <DataTitle>L<GraphData>0.0682</GraphData></DataTitle>
+                                            <DataTitle>C<GraphData>0.0682</GraphData></DataTitle>    
+                                        </GraphTitleRightContainer>
+                                    </GraphTitleContainer>
+                                    <SpanVolume>VOLUME $223K</SpanVolume>
+                                    <MainGraphContainer>
+                                        <MainLeftContainer>
+                                            <Graph></Graph>
+                                            <GraphHorozontalContainer>
+                                                <HorizontalDataUL>
+                                                    <HorizontalData></HorizontalData>
+                                                </HorizontalDataUL>
+                                            </GraphHorozontalContainer>
+                                        </MainLeftContainer>
+                                        <MainRightContainer>
+                                            <VerticalDAtaUL>
+                                                <VerticalData></VerticalData>
+                                            </VerticalDAtaUL>
+                                        </MainRightContainer>
+                                    </MainGraphContainer>
+                            </RightGraphContainer>
                         </LeftMiddleInsideBottom>
                     </DashboardMiddleSection> {/* left middle section */}
                     
                     <LeftBottomContainer>
-                        <LeftBottomTwoContainers></LeftBottomTwoContainers>
-                        <LeftBottomTwoContainers></LeftBottomTwoContainers>
-
+                        <LeftBottomTwoContainers>
+                            <ActivityContainer>
+                                <ActivityLeftContainer>
+                                    <ActivityTitile>Activity</ActivityTitile>
+                                </ActivityLeftContainer>
+                                <ActivityRightContainer>
+                                    <ActivityButtons>D</ActivityButtons>
+                                    <ActivityButtons>M</ActivityButtons>
+                                    <ActivityButtons>Y</ActivityButtons>           
+                                </ActivityRightContainer>
+                            </ActivityContainer>
+                            <MoneyContainer>
+                                    <MoneyLeftContainer>
+                                        <MoneySpan>
+                                            <MoneyImage src={require("../assets/moneygreen.svg").default} alt= "moneyImage" />
+                                        </MoneySpan>
+                                        <MoneyDateContainer>
+                                            <TypeTransaction>Withdraw</TypeTransaction>
+                                            <DateTransaction>12-02-21</DateTransaction>
+                                        </MoneyDateContainer>
+                                    </MoneyLeftContainer>
+                                    <MoneyRightContainer>
+                                        <TransactionAmountRed>-$1403.00</TransactionAmountRed>
+                                        <MoneyTypeRed>ETH 0.64</MoneyTypeRed>
+                                    </MoneyRightContainer>
+                                </MoneyContainer>
+                                <MoneyContainer>
+                                    <MoneyLeftContainer>
+                                        <MoneySpan>
+                                            <MoneyImage src={require("../assets/moneygreen.svg").default} alt= "moneyImage" />
+                                        </MoneySpan>
+                                        <MoneyDateContainer>
+                                            <TypeTransaction>Cash In</TypeTransaction>
+                                            <DateTransaction>12-02-21</DateTransaction>
+                                        </MoneyDateContainer>
+                                    </MoneyLeftContainer>
+                                    <MoneyRightContainer>
+                                        <TransactionAmount>+$2203.00</TransactionAmount>
+                                        <MoneyType>BIT 0.22</MoneyType>
+                                    </MoneyRightContainer>
+                                </MoneyContainer>
+                                <MoneyContainer>
+                                    <MoneyLeftContainer>
+                                        <MoneySpan>
+                                            <MoneyImage src={require("../assets/moneygreen.svg").default} alt= "moneyImage" />
+                                        </MoneySpan>
+                                        <MoneyDateContainer>
+                                            <TypeTransaction>Top Up</TypeTransaction>
+                                            <DateTransaction>12-02-21</DateTransaction>
+                                        </MoneyDateContainer>
+                                    </MoneyLeftContainer>
+                                    <MoneyRightContainer>
+                                        <TransactionAmountRed>-$403.00</TransactionAmountRed>
+                                        <MoneyTypeRed> RPE O.44</MoneyTypeRed>
+                                    </MoneyRightContainer>
+                                </MoneyContainer>
+                        </LeftBottomTwoContainers>
+                        <LeftBottomTwoContainers>
+                            <CapContainer>
+                                <CapLeftContainer>
+                                    <CapTitle>Market Cap</CapTitle>
+                                </CapLeftContainer>
+                                <CapRightContainer>
+                                    <SeeButton>See All</SeeButton>
+                                </CapRightContainer>
+                            </CapContainer>
+                            <PairContainer>
+                                <PairLeft>
+                                    <PairLeftTitle>Pair</PairLeftTitle>
+                                </PairLeft>
+                                <PairMiddle>
+                                    <PairMiddleTitle>Price</PairMiddleTitle>
+                                </PairMiddle>
+                                <PairRight>
+                                    <PairRightTitle>Change</PairRightTitle>
+                                </PairRight>
+                            </PairContainer>
+                            <StarContainer>
+                                <StarLeft>
+                                    <StarImage src={require("../assets/star.svg").default} alt="starIMage" />
+                                    <StarType>ARK/BTC</StarType>
+                                </StarLeft>
+                                <StarMiddle>
+                                    <StarPrice>0.00088</StarPrice>
+                                </StarMiddle>
+                                <StarRight>
+                                    <StarPerc>+1.36%</StarPerc>
+                                </StarRight>
+                            </StarContainer>
+                            <StarContainer>
+                                <StarLeft>
+                                    <StarImage src={require("../assets/star.svg").default} alt="starIMage" />
+                                    <StarType>ARK/BTC</StarType>
+                                </StarLeft>
+                                <StarMiddle>
+                                    <StarPriceRed>0.00088</StarPriceRed>
+                                </StarMiddle>
+                                <StarRight>
+                                    <StarPercRed>-1.36%</StarPercRed>
+                                </StarRight>
+                            </StarContainer>
+                            <StarContainer>
+                                <StarLeft>
+                                    <StarImage src={require("../assets/star.svg").default} alt="starIMage" />
+                                    <StarType>ARK/BTC</StarType>
+                                </StarLeft>
+                                <StarMiddle>
+                                    <StarPrice>0.00088</StarPrice>
+                                </StarMiddle>
+                                <StarRight>
+                                    <StarPerc>+1.36%</StarPerc>
+                                </StarRight>
+                            </StarContainer>
+                            <StarContainer>
+                                <StarLeft>
+                                    <StarImage src={require("../assets/star.svg").default} alt="starIMage" />
+                                    <StarType>ARK/BTC</StarType>
+                                </StarLeft>
+                                <StarMiddle>
+                                    <StarPriceRed>0.00088</StarPriceRed>
+                                </StarMiddle>
+                                <StarRight>
+                                    <StarPercRed>-1.36%</StarPercRed>
+                                </StarRight>
+                            </StarContainer>
+                        </LeftBottomTwoContainers>
                     </LeftBottomContainer>  {/* left bottom section */}
                 </DashboardLeft>   {/* dashboard left section */}
                
@@ -391,16 +544,218 @@ width: 20px;
 margin-bottom: 10px;
 `
 const RightGraphContainer = styled.div``
+const GraphTitleContainer = styled.div``
+const GraphTitleLeftContainer = styled.div``
+const GraphType = styled.h3``
+const GraphTime = styled.h3``
+const GraphSwap = styled.h3``
+const GraphTitleRightContainer = styled.div``
+const DataTitle = styled.span``
+const GraphDataGreen = styled.h5``
+const GraphData = styled.h5``
+const SpanVolume = styled.span
+const MainGraphContainer = styled.div``
+const MainLeftContainer = styled.div``
+const Graph = styled.div``
+const GraphHorozontalContainer = styled.div``
+const HorizontalDataUL = styled.ul``
+const HorizontalData = styled.li``
+const MainRightContainer = styled.div``
+const VerticalDAtaUL = styled.ul``
+const VerticalData = styled.li``
+
 
 const LeftBottomContainer = styled.div`
 display: flex;
 justify-content: space-between;
+margin-bottom: 50px;
 `
 const LeftBottomTwoContainers = styled.div`
-width:40%;
-height: 100px;
+width:46%;
 background:#171B2C;
+border-radius: 8px;
+padding: 20px;
+
 `
+const ActivityContainer = styled.div`
+display: flex;
+justify-content: space-between;
+align-items: center;
+`
+const ActivityLeftContainer = styled.div``
+const ActivityTitile = styled.h3`
+color:#BDC5D9 ;
+font-size: 14px;
+font-weight: 600;
+`
+const ActivityRightContainer = styled.div`
+display: flex;
+justify-content: space-between;
+align-items: center;
+`
+const ActivityButtons = styled.button`
+background-color: #1d2033;
+color: #7B7F94;
+display: block;
+padding: 5px; 
+border-radius: 6px;
+font-size: 10px;
+margin-left: 5px;
+`
+const MoneyContainer = styled.div`
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-top: 15px;
+`
+const MoneyLeftContainer = styled.div`
+display: flex;
+justify-content: space-between;
+align-items: center;
+`
+const MoneySpan = styled.span`
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 6px;
+background-color: #111219;
+width: 20px;
+height: 20px;
+
+`
+const MoneyImage = styled.img`
+width: 15px;
+height: 15px;
+display: block;
+`
+const MoneyDateContainer = styled.div`
+margin-left: 10px;
+`
+const TypeTransaction = styled.h4`
+color:#BDC5D9 ;
+font-size: 12px;
+font-weight: 600;
+`
+const DateTransaction = styled.h6`
+color:#BDC5D9 ;
+font-size: 10px;
+font-weight: 600;
+`
+const MoneyRightContainer = styled.div`
+display: flex;
+flex-direction: column;
+align-items: flex-end;
+
+`
+const TransactionAmount = styled.h4`
+color:#459E75 ;
+font-size: 12px;
+font-weight: 500;
+`
+const MoneyType = styled.h6`
+color:#459E75 ;
+font-size: 10px;
+font-weight: 500;
+
+`
+const TransactionAmountRed = styled.h4`
+color: #A1474F;
+font-size: 12px;
+font-weight: 500;
+
+
+`
+const MoneyTypeRed = styled.h6`
+color: #A1474F;
+font-size: 10px;
+font-weight: 500;
+`
+
+const CapContainer = styled.div`
+display: flex;
+justify-content: space-between;
+align-items: center;
+`
+const CapLeftContainer = styled.div``
+const CapTitle = styled.h3`
+color:#BDC5D9 ;
+font-size: 14px;
+font-weight: 600;
+`
+const CapRightContainer = styled.div``
+const SeeButton = styled.button`
+background-color: #1d2033;
+color: #7B7F94;
+display: block;
+padding: 10px 30px 10px 5px; 
+border-radius: 10px;
+font-size: 10px;
+`
+const PairContainer = styled.div`
+display: flex;
+justify-content: space-between;
+margin-top: 15px;
+`
+const PairLeft = styled.div``
+const PairLeftTitle = styled.h5`
+color: #7B7F94;
+font-size: 10px;
+`
+const PairMiddle = styled.div``
+const PairMiddleTitle = styled.h5`
+color: #7B7F94;
+font-size: 10px;
+
+`
+const PairRight = styled.div``
+const PairRightTitle = styled.h5`
+color: #7B7F94;
+font-size: 10px;
+
+
+`
+const StarContainer = styled.div`
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-top: 15px;
+/* width: 95%; */
+`
+const StarLeft = styled.div`
+display: flex;
+justify-content: space-between;
+align-items: center;
+`
+const StarImage = styled.img`
+display: block;
+width: 10px;
+`
+const StarType = styled.h5`
+color: #7B7F94;
+font-size: 10px;
+
+`
+const StarMiddle = styled.div`
+`
+const StarPrice = styled.h5`
+font-size: 10px;
+color: #459E75;
+`
+const StarPriceRed = styled.h5`
+font-size: 10px;
+color: #A1474F;
+
+`
+const StarRight = styled.div``
+const StarPerc = styled.h5`
+font-size: 10px;
+color: #459E75;
+`
+const StarPercRed = styled.h5`
+font-size: 10px;
+color: #A1474F;
+`
+
 const DashboardRight = styled.div`
 width:25%;
 
@@ -615,19 +970,20 @@ const SaleContainer = styled.div`
 display: flex;
 justify-content: space-between;
 align-items: center;
-border: .5px solid #171B2C;
-box-shadow: rgb(118, 130, 155,.5) 1px 0.5px 0.5px 0.5px;
+border: 1px solid #76829B;
+/* box-shadow:  rgba(118, 130, 155, 0.5) 1px 0px 2px; */
 padding: 10px;
 border-radius: 8px;
 border-bottom-left-radius:0;
 border-top-left-radius:0;
 margin-bottom: 20px;
+border-left: 0;
 `
 const SaleAmount = styled.h4`
 color: #BDC5D9;
 font-size: 15px;
 font-weight:600;
-
+box-shadow: rgb(23, 27, 44) -17px 26px 7px, rgb(23, 27, 44) -18px 10px 15px, rgb(23, 27, 44) -20px -15px 5px, rgb(23, 27, 44) 8px 32px 23px;
 `
 
 const CurrencyDropdown = styled.select`
