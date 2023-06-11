@@ -1,9 +1,64 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import styled from "styled-components"
 import Header from '../includes/Header'
 
 
 export default function Dashboard() {
+    const [activityDay, setActivityDay] = useState({
+        
+            withdrawal:
+                {amount : "-$1403.00",
+                type: "ETH 0.64"},
+            CashIn:
+                {amount : "+$2203.00",
+                type: "BIT 0.22"},
+             TopUp:
+                {amount : "-$403.00",
+                type: "ETH 0.44"}
+        
+    }
+    );
+
+   const activityLog =() =>{
+
+    setActivityDay({
+        withdrawal:{amount : "-$1403.00",
+        type: "ETH 0.64"},
+        CashIn:{amount : "+$2203.00",
+                type: "BIT 0.22"},
+        TopUp:{amount : "-$403.00",
+               type: "ETH 0.44"}
+            })
+
+
+
+    };
+    const activityLogMonth =() =>{
+
+        setActivityDay({
+            withdrawal:{amount : "-$11403.00",
+                        type: "ETH 0.1264"},
+            CashIn:{amount : "+$9943.00",
+                    type: "BIT 1.22"},
+            TopUp:{amount : "-$1903.00",
+                   type: "ETH 22.24"}
+    
+        })
+        };
+        const activityLogYear =() =>{
+
+            setActivityDay({
+                withdrawal:{amount : "-$991403.00",
+                            type: "ETH 7.1264"},
+                    CashIn:{amount : "+$89943.00",
+                            type: "BIT 175.25"},
+                     TopUp:{amount : "-$72903.00",
+                            type: "ETH 754.84"}
+        
+            })
+            };
+
+
   return (
     <>
         
@@ -34,7 +89,7 @@ export default function Dashboard() {
                         </TopThreeContainer>
                         <TopThreeContainer>
                             <TopInnerTop>
-                                <TopCount>852,00</TopCount>
+                                <TopCount>342,00</TopCount>
                                 <UpImageContainer>
                                     <SpanContainerRed>
                                     <TopImage src = {require("../assets/reddown.svg").default} alt = "image"></TopImage>
@@ -147,9 +202,9 @@ export default function Dashboard() {
                                     <ActivityTitile>Activity</ActivityTitile>
                                 </ActivityLeftContainer>
                                 <ActivityRightContainer>
-                                    <ActivityButtons>D</ActivityButtons>
-                                    <ActivityButtons>M</ActivityButtons>
-                                    <ActivityButtons>Y</ActivityButtons>           
+                                    <ActivityButtons onClick={activityLog}>D</ActivityButtons>
+                                    <ActivityButtons onClick={activityLogMonth}>M</ActivityButtons>
+                                    <ActivityButtons onClick={activityLogYear}>Y</ActivityButtons>           
                                 </ActivityRightContainer>
                             </ActivityContainer>
                             <MoneyContainer>
@@ -163,8 +218,8 @@ export default function Dashboard() {
                                         </MoneyDateContainer>
                                     </MoneyLeftContainer>
                                     <MoneyRightContainer>
-                                        <TransactionAmountRed>-$1403.00</TransactionAmountRed>
-                                        <MoneyTypeRed>ETH 0.64</MoneyTypeRed>
+                                        <TransactionAmountRed>{`${activityDay.withdrawal.amount}`}</TransactionAmountRed>
+                                        <MoneyTypeRed>{`${activityDay.withdrawal.type}`}</MoneyTypeRed>
                                     </MoneyRightContainer>
                                 </MoneyContainer>
                                 <MoneyContainer>
@@ -178,8 +233,8 @@ export default function Dashboard() {
                                         </MoneyDateContainer>
                                     </MoneyLeftContainer>
                                     <MoneyRightContainer>
-                                        <TransactionAmount>+$2203.00</TransactionAmount>
-                                        <MoneyType>BIT 0.22</MoneyType>
+                                        <TransactionAmount>{`${activityDay.CashIn.amount}`}</TransactionAmount>
+                                        <MoneyType>{`${activityDay.CashIn.type}`}</MoneyType>
                                     </MoneyRightContainer>
                                 </MoneyContainer>
                                 <MoneyContainer>
@@ -193,8 +248,8 @@ export default function Dashboard() {
                                         </MoneyDateContainer>
                                     </MoneyLeftContainer>
                                     <MoneyRightContainer>
-                                        <TransactionAmountRed>-$403.00</TransactionAmountRed>
-                                        <MoneyTypeRed> RPE O.44</MoneyTypeRed>
+                                        <TransactionAmountRed>{`${activityDay.TopUp.amount}`}</TransactionAmountRed>
+                                        <MoneyTypeRed> {`${activityDay.TopUp.amount}`}</MoneyTypeRed>
                                     </MoneyRightContainer>
                                 </MoneyContainer>
                         </LeftBottomTwoContainers>
@@ -506,7 +561,7 @@ margin-bottom: 20px;
 `
 const MarketContainer = styled.div``
 const MarketTitle = styled.h3`
-color: #fff;
+color: #BDC5D9;
 `
 const TimeContainer = styled.div`
 display: flex;
@@ -532,7 +587,10 @@ height: 20px;
 margin-right: 10px;
 
 `
-const LeftMiddleInsideBottom = styled.div``
+const LeftMiddleInsideBottom = styled.div`
+display: flex;
+align-items: center;
+`
 const LeftToolContainer = styled.div`
 display: flex;
 flex-direction: column;
@@ -543,17 +601,77 @@ display: block;
 width: 20px;
 margin-bottom: 10px;
 `
-const RightGraphContainer = styled.div``
-const GraphTitleContainer = styled.div``
-const GraphTitleLeftContainer = styled.div``
-const GraphType = styled.h3``
-const GraphTime = styled.h3``
-const GraphSwap = styled.h3``
-const GraphTitleRightContainer = styled.div``
-const DataTitle = styled.span``
-const GraphDataGreen = styled.h5``
-const GraphData = styled.h5``
-const SpanVolume = styled.span
+const RightGraphContainer = styled.div`
+width: 100%;
+height: 210px;
+
+
+
+`
+const GraphTitleContainer = styled.div`
+display: flex;
+justify-content: space-between;
+align-items: center;
+`
+const GraphTitleLeftContainer = styled.div`
+display: flex;
+justify-content: space-between;
+align-items: center;
+width: 25%;
+`
+const GraphType = styled.h3`
+color: #BDC5D9;
+font-size: 14px;
+
+
+`
+const GraphTime = styled.h3`
+color: #BDC5D9;
+font-size: 14px;
+
+
+`
+const GraphSwap = styled.h3`
+color: #BDC5D9;
+font-size: 14px;
+
+
+`
+const GraphTitleRightContainer = styled.div`
+display: flex;
+justify-content: space-between;
+align-items: center;
+width: 34%;
+
+`
+const DataTitle = styled.span`
+display: flex;
+align-items: center;
+color: #BDC5D9;
+font-size: 12px;
+
+`
+const GraphDataGreen = styled.span`
+color: #459E75;
+margin-left: 5px;
+font-size: 12px;
+display: block;
+
+`
+const GraphData = styled.span`
+color: #A1474F;
+margin-left: 5px;
+font-size: 12px;
+display: block;
+
+
+
+
+`
+const SpanVolume = styled.span`
+color:#7B7F94;
+font-size:10px;
+`
 const MainGraphContainer = styled.div``
 const MainLeftContainer = styled.div``
 const Graph = styled.div``
@@ -866,17 +984,19 @@ const BitCoinContainer = styled.div`
 display: flex;
 justify-content: space-between;
 padding: 10px;
-border:.3px solid ;
-
+border: 1px solid rgba(123, 127, 148,0.5);
 border-left : none;
 box-shadow: radial-gradient(red, green, blue) 1px 1px 1px 0px ;
 margin-bottom: 10px;
 border-radius: 8px;
-
+border-bottom-left-radius :0;
+border-top-left-radius :0;
 `
 const BitCoinLeftContainer = styled.div`
 display: flex;
 align-items: center;
+box-shadow: rgb(23, 27, 44) -17px 26px 7px, rgb(23, 27, 44) -18px 10px 15px, rgb(23, 27, 44) -20px -15px 5px, rgb(23, 27, 44) 8px 32px 23px;
+
 
 `
 const BitcoinSpan = styled.span`
@@ -887,6 +1007,7 @@ height: 25px;
 display: flex;
 justify-content:center;
 align-items: center;
+
 
 `
 
@@ -970,7 +1091,7 @@ const SaleContainer = styled.div`
 display: flex;
 justify-content: space-between;
 align-items: center;
-border: 1px solid #76829B;
+border: 1px solid rgba(123, 127, 148,0.5);
 /* box-shadow:  rgba(118, 130, 155, 0.5) 1px 0px 2px; */
 padding: 10px;
 border-radius: 8px;
@@ -983,7 +1104,7 @@ const SaleAmount = styled.h4`
 color: #BDC5D9;
 font-size: 15px;
 font-weight:600;
-box-shadow: rgb(23, 27, 44) -17px 26px 7px, rgb(23, 27, 44) -18px 10px 15px, rgb(23, 27, 44) -20px -15px 5px, rgb(23, 27, 44) 8px 32px 23px;
+box-shadow: rgb(23, 27, 44) -17px 26px 7px, rgb(23, 27, 44) -18px 10px 15px, rgb(23, 27, 44) -20px -15px 5px, rgb(23, 27, 44) -1px 11px 23px;;
 `
 
 const CurrencyDropdown = styled.select`

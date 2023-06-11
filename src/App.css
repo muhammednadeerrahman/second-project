@@ -25,3 +25,26 @@ a{
 a.active h3{
   color: #07af5a;
 }
+button{
+  cursor: pointer;
+}
+button:hover{
+  opacity: .5;
+
+}
+select{
+  cursor: pointer;
+
+
+}
+option{
+  cursor: pointer;
+  font-weight: 600;
+  border: none;
+  outline: none;
+   background-color: #171B2C;
+   color: #BDC5D9;
+}
+span{
+  cursor: pointer;
+}
